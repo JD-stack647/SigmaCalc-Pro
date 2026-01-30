@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>🧠 SigmaCalc Pro - Junior Santos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>🧮 SigmaCalc Pro</h1>
+    <p>Engenharia Financeira & Estatística Avançada</p>
+</header>
+
+<div class="card">
+    <label>Selecione o Módulo:</label>
+    <select id="menu">
+        <option value="estatistica">📊 1. Estatística Descritiva</option>
+        <option value="juros">💰 2. Juros (Simples/Composto)</option>
+        <option value="valorFuturo">📈 3. Valor Futuro (FV)</option>
+        <option value="valorPresente">📉 4. Valor Presente (PV)</option>
+        <option value="prestacaoPMT">💳 5. Prestação (PMT)</option>
+        <option value="descontoSimples">💵 6. Desconto Comercial Simples</option>
+        <option value="descontoComposto">💵 7. Desconto Comercial Composto</option>
+        <option value="vpl">📊 8. Valor Presente Líquido (VPL)</option>
+        <option value="tir">📈 9. Taxa Interna de Retorno (TIR)</option>
+        <option value="aporte">💰 10. Aporte Periódico (Série)</option>
+        <option value="tabelaPrice">🏦 11. Tabela Price</option>
+        <option value="sistemaSAC">📉 12. Sistema SAC</option>
+        
+    </select>
+</div>
+
+<div id="modulo-render" class="card">
+    </div>
+
+<div class="card" id="chart-container" style="display:none;">
+    <canvas id="meuGrafico"></canvas>
+</div>
+
+<div id="tabela-render"></div>
+
+<!-- Seção de Redes Sociais e Apps -->
+<footer class="main-footer" style="
+    background-color: var(--card);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid var(--accent);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.1) inset;
+    margin-top: 40px;
+">
+    <h2 style="color: var(--accent); text-transform: uppercase; letter-spacing: 1px; font-size: 1.2em;">Minhas Redes & Apps</h2>
+    <p style="color: #ccc; font-size: 0.9em; margin-bottom: 25px;">Acompanhe meus projetos e especializações:</p>
+
+    <div style="
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 0 auto 30px auto;
+    ">
+        <a href="https://www.linkedin.com/in/junior-santos-9b930b211" target="_blank" class="link-btn">LinkedIn</a>
+        <a href="https://www.dio.me/users/diegojr09" target="_blank" class="link-btn">Perfil DIO</a>
+        <a href="https://play.google.com/store/apps/details?id=com.diego.hubdeportfolios" target="_blank" class="link-btn">📱 Hub Portfólios</a>
+        <a href="https://junior670.github.io/Portf-lio/" target="_blank" class="link-btn">📊 Portfólio Web</a>
+        <a href="https://www.youtube.com/@VitrinePortf%C3%B3lios" target="_blank" class="link-btn">YouTube</a>
+    </div>
+
+    <div style="border-top: 1px solid #333; padding-top: 25px;">
+    <p style="color: var(--accent); font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1.5px; font-size: 1.1em;">
+        Junior Santos
+    </p>
+    <p style="font-size: 0.85em; color: var(--blue-tech); margin: 3px 0;">Especialista em Matemática Financeira e Estatística</p>
+    <p style="font-size: 0.85em; color: var(--blue-tech); margin: 3px 0;">Especialista em Segurança da Informação</p>
+    <p style="font-size: 0.8em; color: #888; margin-top: 8px;">Gestão da TI | Fatec Jundiaí</p>
+    <p style="font-size: 0.7em; color: #555; margin-top: 15px; letter-spacing: 1px;">© 2024 • TODOS OS DIREITOS RESERVADOS</p>
+</div>
+</footer>
+
+<style>
+    .link-btn {
+        color: var(--accent) !important;
+        text-decoration: none;
+        border: 1px solid var(--accent);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        transition: 0.3s;
+        background: rgba(57, 255, 20, 0.05);
+    }
+    .link-btn:hover {
+        background: var(--accent);
+        color: #000 !important;
+        box-shadow: 0 0 10px var(--accent);
+    }
+</style>
+<button id="btnPdf">Baixar PDF</button>
+
+
+<script src="sigmacalc.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="pdf.js"></script>
+
+</body>
+</html>
