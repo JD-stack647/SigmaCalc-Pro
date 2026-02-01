@@ -205,15 +205,10 @@ document.getElementById("btnPdf").addEventListener("click", () => {
     texto("SigmaCalc Pro - Projeto Educacional");
 
     
-    const pdfBase64 = doc.output("datauristring");
-    const base64 = pdfBase64.split(',')[1];
+    const pdfBase64 = doc.output('datauristring').split(',')[1];
+    Android.saveBase64Pdf(pdfBase64);
 
-    if (window.Android && Android.saveBase64Pdf) {
-        Android.saveBase64Pdf(base64);
-    } else {
-    // fallback navegador normal
-    doc.save("caderno_completo_sigmacalc.pdf");
-    }
 });
+
 
 
